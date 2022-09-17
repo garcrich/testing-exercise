@@ -1,0 +1,16 @@
+.edit-person-name {
+  padding: 10px 20px;
+}
+.edit-person-name label {
+  display: inline-block;
+  width: 70px;
+}
+.row {
+  margin-bottom: 10px;
+}
+.success-message {
+  color: green;
+}
+.field-error {
+  color: red;
+}
