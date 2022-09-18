@@ -11,29 +11,16 @@ const people = [
   },
 ];
 
-const companies = [
-  {
-    id: 1,
-    name: "Dibbert Group",
-  },
-  {
-    id: 2,
-    name: "Littel, Schulist and Rice",
-  },
-];
-
 function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function getPerson(id) {
+export async function searchPeople(criteria) {
   await wait(200);
-  const found = people.filter((p) => p.id === id);
-  return found.length === 0 ? "Person Not Found" : found[0];
-}
-
-export async function getCompany(id) {
-  await wait(200);
-  const found = companies.filter((p) => p.id === id);
-  return found.length === 0 ? "Company Not Found" : found[0];
+  const found = people.filter(
+    (p) =>
+      p.firstName.toLowerCase().indexOf(criteria.toLowerCase()) > -1 ||
+      p.lastName.toLowerCase().indexOf(criteria.toLowerCase()) > -1
+  );
+  return found;
 }
