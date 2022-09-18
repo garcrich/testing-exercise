@@ -29,11 +29,11 @@ function wait(ms) {
 export async function getPerson(id) {
   await wait(200);
   const found = people.filter((p) => p.id === id);
-  return found.length === 0 ? null : found[0];
+  return found.length === 0 ? "Person Not Found" : found[0];
 }
 
 export async function getCompany(id) {
   await wait(200);
   const found = companies.filter((p) => p.id === id);
-  return found.length === 0 ? undefined : found[0];
+  return found.length === 0 ? "Company Not Found" : found[0];
 }
