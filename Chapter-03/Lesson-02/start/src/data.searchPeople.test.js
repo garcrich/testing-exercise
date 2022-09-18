@@ -1,25 +1,22 @@
 import { searchPeople } from "./data";
 
-test("Should return a person when match on first name", async () => {
-  const people = await searchPeople("bill");
-  expect(people.length).toBe(1);
-  expect(people).toEqual([
+test("Should return correct array when have matches", async () => {
+  const result = await searchPeople("pe");
+  expect(result).toStrictEqual([
     {
       id: 1,
       firstName: "Bill",
       lastName: "Peters",
     },
-  ]);
-  expect(people).toStrictEqual([
     {
-      id: 1,
-      firstName: "Bill",
-      lastName: "Peters",
+      id: 3,
+      firstName: "Sue",
+      lastName: "Peel",
     },
   ]);
-  expect(people).toContainEqual({
-    id: 1,
-    firstName: "Bill",
-    lastName: "Peters",
-  });
 });
+
+test("Should return correct array when have matches", async () => {
+  const result = await searchPeople("pe");
+  expect(result).toMatchSnapshot();
+})
