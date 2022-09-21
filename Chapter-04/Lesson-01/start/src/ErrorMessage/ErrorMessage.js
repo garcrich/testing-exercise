@@ -3,7 +3,7 @@ import cross from "./cross.png";
 
 export function ErrorMessage({ message }) {
   return (
-    <div className="save-error">
+    <div className="error-message">
       <img src={cross} alt="cross" />
       {message}
     </div>
