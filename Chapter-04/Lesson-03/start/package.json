@@ -5,6 +5,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.13",
+    "@testing-library/jest-dom": "^5.16.5",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
@@ -21,6 +22,15 @@
     "test": "jest",
     "start": "webpack serve --config webpack.dev.config.js",
     "build": "webpack --config webpack.prod.config.js"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)＄": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg|jpeg|png|gif)＄": "<rootDir>/__mocks__/fileMock.js"
+    }
   },
   "dependencies": {
     "react": "^17.0.1",
