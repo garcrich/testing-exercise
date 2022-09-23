@@ -21,8 +21,12 @@ export function PersonPage({ id }) {
   }, [id]);
 
   if (loading) {
-    return <p>Loading ...</p>;
-  }
+    return (
+      <>
+        <p>Loading ...</p>;
+        <p>Loading ...</p>;
+      </>
+    )}
 
   return (
     <div className="person-page">
