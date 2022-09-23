@@ -54,6 +54,7 @@ export function EditPersonName({ id }) {
           id="firstName"
           name="firstName"
           placeholder="Enter first name"
+          data-testid="firstName"
           defaultValue={person.firstName}
           {...register("firstName", { required: true })}
         />
