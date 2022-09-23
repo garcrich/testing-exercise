@@ -27,6 +27,6 @@ function wait(ms) {
 }
 
 export async function getPerson(id) {
-  await wait(100);
+  await wait(2000);
   return people.filter((p) => p.id === id)[0];
 }

@@ -31,6 +31,7 @@ export function PersonPage({ id }) {
   return (
     <div className="person-page">
       <h3>{person.firstName + " " + person.lastName}</h3>
+      <h3>{person.firstName + " " + person.lastName}</h3>
       <a href={`mailto:${person.email}`}>Email: {person.email}</a>
       <ul>
         {person.scores.map((score) => (
